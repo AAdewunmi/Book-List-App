@@ -47,4 +47,10 @@ class UI {
     //Vanish in 3 seconds
     setTimeout(() => document.querySelector(".alert").remove(), 3000);
   }
+
+  static clearFields() {
+    document.querySelector("#title").value = "";
+    document.querySelector("#author").value = "";
+    document.querySelector("#isbn").value = "";
+  }
 }
