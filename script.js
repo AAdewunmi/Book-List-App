@@ -66,4 +66,12 @@ class Store {
 
     return books;
   }
+
+  static addBooks(book) {
+    const books = Store.getBooks();
+
+    books.push(book);
+
+    localStorage.setItem("books", JSON.stringify(books));
+  }
 }
