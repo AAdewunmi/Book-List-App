@@ -54,3 +54,7 @@ class UI {
     document.querySelector("#isbn").value = "";
   }
 }
+
+class Store {
+  
+}
