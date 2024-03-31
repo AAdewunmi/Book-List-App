@@ -119,12 +119,12 @@ document.querySelector("#book-form").addEventListener("submit", (e) => {
   }
 });
 
-document.querySelector("#book-list").addEventListener("click", (e) => {
-  //Removing book from UI
-  UI.deleteBook(e.target);
+document.querySelector("#book-list").addEventListener('click', (e) => {
+    //Removing book from UI
+    UI.deleteBook(e.target);
 
-  //Remove book from store
-  Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
+    //Remove book from store
+    Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 
-  UI.showAlerts("Book Removed", "success");
+    UI.showAlerts('Book Removed', 'success');
 });
