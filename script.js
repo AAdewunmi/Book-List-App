@@ -89,3 +89,32 @@ class Store {
 }
 
 document.addEventListener("DOMContentLoaded", UI.displayBooks);
+
+document.querySelector("#book-form").addEventListener("submit", (e) => {
+  //PREVENT ACTUAL SUBMIT
+  e.preventDefault();
+  //GET VALUES FROM THE FORM
+  const title = document.querySelector("#title").value;
+  const author = document.querySelector("#author").value;
+  const isbn = document.querySelector("#isbn").value;
+
+  //Validation
+  if (title === "" || author === "" || isbn === "") {
+    UI.showAlerts("Please fill in the fields", "danger");
+  } else {
+    //INSTANTIATE BOOK
+    const book = new Book(title, author, isbn);
+
+    // SUCCESS MESSAGE
+    UI.showAlerts("Book Added", "success");
+
+    //ADD BOOK TO UI
+    UI.addBookToList(book);
+
+    //Add Book to store
+    Store.addBooks(book);
+
+    //CLEAR FIELD AFTER PRESSING SUBMIT BUTTON
+    UI.clearFields();
+  }
+});
